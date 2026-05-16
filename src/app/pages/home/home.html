@@ -1,0 +1,84 @@
+<main class="page-shell home-page">
+  <nav class="topbar" aria-label="Main navigation">
+    <a class="brand" routerLink="/">
+      <span class="brand-mark">NP</span>
+      <span class="brand-name">NovaPublish</span>
+    </a>
+
+    <div class="nav-actions">
+      <a class="btn btn-secondary" routerLink="/login">Login</a>
+      <a class="btn btn-primary" routerLink="/signup">Sign up</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Book accessibility workflow</p>
+      <h1>Publish books with sharper alt text review.</h1>
+      <p class="intro">
+        NovaPublish helps publishing teams review image descriptions, track quality issues,
+        and prepare accessible manuscripts with confidence.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" routerLink="/signup">Start reviewing</a>
+        <a class="btn btn-secondary" routerLink="/login">I already have an account</a>
+      </div>
+    </div>
+
+    <div class="workspace-preview" aria-label="Alt text quality dashboard preview">
+      <div class="preview-header">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="score-row">
+        <div>
+          <p>Quality score</p>
+          <strong>94%</strong>
+        </div>
+        <div class="score-ring">QA</div>
+      </div>
+      <div class="book-panel">
+        <div class="book-cover">Ch. 04</div>
+        <div>
+          <p class="panel-label">Current review</p>
+          <h2>Diagrams and figure descriptions</h2>
+          <span class="status-pill">12 suggestions ready</span>
+        </div>
+      </div>
+      <div class="review-list">
+        <div>
+          <span class="dot teal"></span>
+          Missing context added
+        </div>
+        <div>
+          <span class="dot coral"></span>
+          Decorative image flagged
+        </div>
+        <div>
+          <span class="dot gold"></span>
+          Long description needed
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-band" aria-label="Platform highlights">
+    <article>
+      <span>01</span>
+      <h3>Manuscript-first review</h3>
+      <p>Keep image descriptions connected to the book chapter and review stage.</p>
+    </article>
+    <article>
+      <span>02</span>
+      <h3>QA signals</h3>
+      <p>Surface missing, vague, duplicated, or overly long alt text before release.</p>
+    </article>
+    <article>
+      <span>03</span>
+      <h3>Publisher handoff</h3>
+      <p>Give editors a clean queue of issues to approve, revise, or send back.</p>
+    </article>
+  </section>
+</main>

@@ -1,0 +1,41 @@
+<main class="page-shell auth-page">
+  <section class="auth-visual signup-visual">
+    <a class="brand" routerLink="/">
+      <span class="brand-mark">NP</span>
+      <span class="brand-name">NovaPublish</span>
+    </a>
+    <div>
+      <p class="eyebrow">Create workspace</p>
+      <h1>Start a cleaner book accessibility process.</h1>
+      <p>
+        Register your team and prepare a focused dashboard for alt text review,
+        approvals, and publisher-ready issue tracking.
+      </p>
+    </div>
+  </section>
+
+  <section class="auth-panel" aria-labelledby="signup-title">
+    <div class="form-card">
+      <h2 id="signup-title">Sign up</h2>
+      <p class="form-intro">Create your account to begin reviewing book alt text.</p>
+
+      <form>
+        <label for="name">Full name</label>
+        <input id="name" type="text" name="name" placeholder="Your name" autocomplete="name" />
+
+        <label for="email">Gmail address</label>
+        <input id="email" type="email" name="email" placeholder="name@gmail.com" autocomplete="email" />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" placeholder="Create a password" autocomplete="new-password" />
+
+        <button class="btn btn-coral" type="button">Create account</button>
+      </form>
+
+      <p class="switch-link">
+        Already registered?
+        <a routerLink="/login">Login instead</a>
+      </p>
+    </div>
+  </section>
+</main>

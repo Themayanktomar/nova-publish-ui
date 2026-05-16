@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink: #18212f;
+  --muted: #657084;
+  --paper: #fffdf8;
+  --mist: #eef6f4;
+  --teal: #106b64;
+  --teal-dark: #0b4d48;
+  --coral: #e76f51;
+  --gold: #f3b84f;
+  --line: rgba(24, 33, 47, 0.12);
+  --shadow: 0 24px 70px rgba(24, 33, 47, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.brand-mark {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  color: #ffffff;
+  background: var(--teal);
+  font-weight: 800;
+  box-shadow: 0 12px 24px rgba(16, 107, 100, 0.24);
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.btn {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 18px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: #ffffff;
+  background: var(--teal);
+  box-shadow: 0 14px 28px rgba(16, 107, 100, 0.22);
+}
+
+.btn-primary:hover {
+  background: var(--teal-dark);
+}
+
+.btn-secondary {
+  color: var(--ink);
+  background: #ffffff;
+  border-color: var(--line);
+}
+
+.btn-coral {
+  color: #ffffff;
+  background: var(--coral);
+  box-shadow: 0 14px 28px rgba(231, 111, 81, 0.22);
+}
+
+.page-shell {
+  min-height: 100vh;
+}
