@@ -1,1 +1,60 @@
-<router-outlet />
+<div class="app-frame">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="brand" routerLink="/">
+        <span class="brand-mark">NP</span>
+        <span class="brand-name">NovaPublish</span>
+      </a>
+
+      <div class="nav-links">
+        <a routerLink="/" fragment="about">About us</a>
+        <a routerLink="/nova-publish" fragment="dashboard" routerLinkActive="active-link">Dashboard</a>
+        <a routerLink="/generate-alt-text" routerLinkActive="active-link">Generate alt text</a>
+      </div>
+
+      <div class="nav-actions">
+        @if (isLoggedIn) {
+          <div class="user-chip" aria-label="Logged in user">
+            <span class="user-icon">{{ userInitial }}</span>
+            <span>{{ userEmail }}</span>
+          </div>
+          <button class="btn btn-secondary" type="button" (click)="logout()">Logout</button>
+        } @else {
+          <a class="btn btn-secondary" routerLink="/login" routerLinkActive="active-button">Login</a>
+          <a class="btn btn-primary" routerLink="/signup" routerLinkActive="active-button">Sign up</a>
+        }
+      </div>
+    </nav>
+  </header>
+
+  <router-outlet />
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-summary">
+        <a class="brand footer-brand" routerLink="/">
+          <span class="brand-mark">NP</span>
+          <span class="brand-name">NovaPublish</span>
+        </a>
+        <p>Accessible publishing tools for editorial and production teams.</p>
+      </div>
+
+      <address>
+        <strong>Contact</strong>
+        <a href="mailto:support@novapublish.com">support@novapublish.com</a>
+        <span>NovaPublish House, 42 Editorial Avenue, Bengaluru, Karnataka 560001</span>
+      </address>
+
+      <div class="footer-meta">
+        <strong>Workspace</strong>
+        <a routerLink="/" fragment="about">About us</a>
+        <a routerLink="/generate-alt-text">Generate alt text</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>Copyright 2026 NovaPublish. All rights reserved.</span>
+      <span>Built for accessible book production.</span>
+    </div>
+  </footer>
+</div>

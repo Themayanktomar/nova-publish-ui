@@ -1,9 +1,5 @@
 <main class="page-shell auth-page">
   <section class="auth-visual signup-visual">
-    <a class="brand" routerLink="/">
-      <span class="brand-mark">NP</span>
-      <span class="brand-name">NovaPublish</span>
-    </a>
     <div>
       <p class="eyebrow">Create workspace</p>
       <h1>Start a cleaner book accessibility process.</h1>
@@ -19,17 +15,44 @@
       <h2 id="signup-title">Sign up</h2>
       <p class="form-intro">Create your account to begin reviewing book alt text.</p>
 
-      <form>
-        <label for="name">Full name</label>
-        <input id="name" type="text" name="name" placeholder="Your name" autocomplete="name" />
+      <form (ngSubmit)="register()">
+        <label for="firstName">First name</label>
+        <input
+          id="firstName"
+          type="text"
+          name="firstName"
+          placeholder="First name"
+          autocomplete="given-name"
+          [(ngModel)]="firstName"
+        />
+
+        <label for="lastName">Last name</label>
+        <input
+          id="lastName"
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          autocomplete="family-name"
+          [(ngModel)]="lastName"
+        />
 
         <label for="email">Gmail address</label>
-        <input id="email" type="email" name="email" placeholder="name@gmail.com" autocomplete="email" />
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="name@gmail.com"
+          autocomplete="email"
+          [(ngModel)]="email"
+        />
 
-        <label for="password">Password</label>
-        <input id="password" type="password" name="password" placeholder="Create a password" autocomplete="new-password" />
+        @if (errorMessage) {
+          <p class="form-message error-message">{{ errorMessage }}</p>
+        }
 
-        <button class="btn btn-coral" type="button">Create account</button>
+        <button class="btn btn-coral" type="submit" [disabled]="isLoading">
+          {{ isLoading ? 'Creating account...' : 'Create account' }}
+        </button>
       </form>
 
       <p class="switch-link">
@@ -38,4 +61,15 @@
       </p>
     </div>
   </section>
+
+  @if (successMessage) {
+    <div class="success-popup" role="status" aria-live="polite">
+      <div>
+        <span class="popup-icon">✓</span>
+        <h3>Registration successful</h3>
+        <p>{{ successMessage }}</p>
+        <small>Taking you to login...</small>
+      </div>
+    </div>
+  }
 </main>

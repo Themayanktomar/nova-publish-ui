@@ -1,0 +1,93 @@
+<main class="page-shell generate-page">
+  <section class="generate-hero">
+    <div>
+      <p class="eyebrow">Generate alt text</p>
+      <h1>Upload image context for accessible descriptions.</h1>
+      <p class="intro">
+        Add the source image and publishing metadata so reviewers can create a cleaner first draft.
+      </p>
+    </div>
+
+    <a class="btn btn-secondary" routerLink="/nova-publish">Back to dashboard</a>
+  </section>
+
+  <section class="generate-grid">
+    <article class="upload-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Image upload</p>
+        <h2>Source image</h2>
+      </div>
+
+      <label class="upload-box" for="imageUpload">
+        <span>Upload image</span>
+        <strong>{{ imageFileName || 'PNG, JPG, or JPEG file' }}</strong>
+        <input
+          id="imageUpload"
+          type="file"
+          accept="image/png,image/jpeg"
+          (change)="onFileSelected($event)"
+        />
+      </label>
+    </article>
+
+    <article class="metadata-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Metadata</p>
+        <h2>Publishing details</h2>
+      </div>
+
+      <form>
+        <label for="bookTitle">Book title</label>
+        <input
+          id="bookTitle"
+          name="bookTitle"
+          type="text"
+          placeholder="Accessible Publishing Handbook"
+          [(ngModel)]="bookTitle"
+        />
+
+        <label for="chapterName">Chapter or section</label>
+        <input
+          id="chapterName"
+          name="chapterName"
+          type="text"
+          placeholder="Chapter 04: Diagrams"
+          [(ngModel)]="chapterName"
+        />
+
+        <label for="imageType">Image type</label>
+        <select id="imageType" name="imageType" [(ngModel)]="imageType">
+          <option>Figure</option>
+          <option>Chart</option>
+          <option>Diagram</option>
+          <option>Cover image</option>
+          <option>Decorative image</option>
+        </select>
+
+        <label for="metadata">Image metadata and context</label>
+        <textarea
+          id="metadata"
+          name="metadata"
+          rows="6"
+          placeholder="Describe what the image contains, why it matters, visible labels, and any surrounding manuscript context."
+          [(ngModel)]="metadata"
+        ></textarea>
+
+        <button class="btn btn-coral" type="button" (click)="generatePreview()">
+          Generate alt text
+        </button>
+      </form>
+    </article>
+
+    <article class="result-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Draft output</p>
+        <h2>Generated alt text</h2>
+      </div>
+
+      <div class="result-box">
+        {{ generatedAltText || 'Your generated alt text will appear here.' }}
+      </div>
+    </article>
+  </section>
+</main>

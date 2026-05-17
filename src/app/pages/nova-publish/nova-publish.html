@@ -1,0 +1,92 @@
+<main class="page-shell nova-page">
+  <section class="workspace-hero">
+    <div>
+      <p class="eyebrow">Publishing workspace</p>
+      <h1>Nova Publish</h1>
+      <p class="intro">
+        Generate image descriptions, review accessibility progress, and follow the history of
+        your organization in one focused dashboard.
+      </p>
+    </div>
+
+    <div class="hero-panel" aria-label="Current review status">
+      <p>Current review</p>
+      <strong>94%</strong>
+      <span>Alt text quality score</span>
+    </div>
+  </section>
+
+  <section class="summary-grid" id="dashboard" aria-label="Dashboard summary">
+    @for (card of summaryCards; track card.label) {
+      <article>
+        <p>{{ card.label }}</p>
+        <strong>{{ card.value }}</strong>
+        <span>{{ card.trend }}</span>
+      </article>
+    }
+  </section>
+
+  <section class="content-grid">
+    <article class="alt-text-panel" id="alt-text">
+      <div class="section-heading">
+        <p class="eyebrow">Alt text generator</p>
+        <h2>Upload an image and metadata</h2>
+      </div>
+
+      <p class="panel-copy">
+        Start a dedicated generation workflow with image upload, book context, chapter details,
+        and metadata for stronger accessibility descriptions.
+      </p>
+
+      <a class="btn btn-coral" routerLink="/generate-alt-text">
+        Generate alt text
+      </a>
+    </article>
+
+    <article class="chart-panel">
+      <div class="section-heading">
+        <p class="eyebrow">Review volume</p>
+        <h2>Monthly organization activity</h2>
+      </div>
+
+      <div class="bar-chart" aria-label="Monthly review volume chart">
+        @for (bar of graphBars; track bar.label) {
+          <div class="bar-item">
+            <span class="bar" [style.height.%]="bar.value"></span>
+            <small>{{ bar.label }}</small>
+          </div>
+        }
+      </div>
+    </article>
+  </section>
+
+  <section class="history-section" aria-labelledby="history-title">
+    <div class="section-heading">
+      <p class="eyebrow">Organization history</p>
+      <h2 id="history-title">Accessibility milestones</h2>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Milestone</th>
+            <th>Impact</th>
+            <th>Quality score</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (row of historyRows; track row.year) {
+            <tr>
+              <td>{{ row.year }}</td>
+              <td>{{ row.milestone }}</td>
+              <td>{{ row.impact }}</td>
+              <td>{{ row.score }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
